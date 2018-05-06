@@ -4,7 +4,7 @@ This module aims to develop statistics for soccer, powered by [Torneo](www.torne
 
 ## Settings File
 
-The sensitive information is stored in a settings.json file in the folder where soccer_stat is stored, so to avoid sharing sensitive information via GitHub.
+The sensitive information is stored in a settings.json file in the folder where soccer_stat is stored, so to avoid sharing sensitive information via GitHub. Direct queries are also stored in the settings.json file as to protect the database integrity.
 The settings file has the following structure:
 
 ```javascript
@@ -17,8 +17,11 @@ The settings file has the following structure:
     "dbuser": "xxxxxxxxx",
     "dbpassword": "xxxxxxxxxxxxxxxxxxxxx",
     "port": xxxx
+  },
+  "queries":{
+    "event": "select * from <table>"
   }
 }
 ```
 
-Bear in mind that at this point in order to user the module the user needs ssh access to the server with their local machine.
+In order to user the module the user needs ssh access to the server with their local machine.
