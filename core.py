@@ -133,7 +133,7 @@ def probability_matrix(events, hometeam, awayteam, goals_list, season='2016/2017
     prob_matrix = all_results.pivot('home_score', 'away_score', 'prob')
 
     #plot
-    plt.figure(figsize=(16,7))
+    plt.figure(figsize=(16,8))
     plt.subplot2grid((2, 4), (0, 0), rowspan=2, colspan=2)
     sns.heatmap(prob_matrix, annot=True, fmt = '.2%', square=1, linewidth=1.)
     plt.title('{0} vs. {1}\n'.format(hometeam, awayteam), fontsize=17)
