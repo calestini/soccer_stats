@@ -60,6 +60,13 @@ def events(settings_json = '../settings.json', league=8):
     event_data = direct_query(querystring, settings_json = settings_json)
     return event_data
 
+def stats(settings_json = '../settings.json', league=8):
+    with open(settings_json) as f:
+        settings = json.load(f, strict=False)
+
+    querystring = queryevent = settings['queries']['stats'].format(league)
+    stats_data = direct_query(querystring, settings_json = settings_json)
+    return stats_data
 
 def probability_matrix(events, hometeam, awayteam, goals_list, season='2016/2017', save_image=False):
     """
