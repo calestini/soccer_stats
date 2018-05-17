@@ -135,7 +135,8 @@ def probability_matrix(events, hometeam, awayteam, goals_list, season='2016/2017
     #plot
     plt.figure(figsize=(16,8))
     plt.subplot2grid((2, 4), (0, 0), rowspan=2, colspan=2)
-    sns.heatmap(prob_matrix, annot=True, fmt = '.2%', square=1, linewidth=1.)
+    axx = sns.heatmap(prob_matrix, annot=True, fmt = '.2%', square=1, linewidth=1.)
+    axx.invert_yaxis()
     plt.title('{0} vs. {1}\n'.format(hometeam, awayteam), fontsize=17)
     plt.xlabel(awayteam)
     plt.ylabel(hometeam)
